@@ -1,5 +1,14 @@
 package com.example.user.factoryapp;
 
+import android.graphics.Bitmap;
+import android.webkit.JsPromptResult;
+import android.webkit.JsResult;
+import android.webkit.URLUtil;
+import android.view.Window;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,32 +25,38 @@ import android.view.View.OnClickListener;
 
 public class introduction extends AppCompatActivity {
 
-    Button back;
+    //Button back;
+    private WebView webView=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
-
-        back = (Button)findViewById(R.id.back1);
-        back.setOnClickListener(new Button.OnClickListener() {
-
-            public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setClass(introduction.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        webView = (WebView)findViewById(R.id.webView);
+        webView.setWebViewClient(mWebViewClient);
+        webView.setInitialScale(1);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("http://www.chumpower.com/tw/about.html");
     }
 
+    WebViewClient mWebViewClient = new WebViewClient() {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+    };
 
-    /*public boolean onKeyDowm(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if(keyCode==KeyEvent.KEYCODE_BACK) {
-
+            Intent intent = new Intent(introduction.this, MainActivity.class);
+            startActivity(intent);
+            this.finish();
             return true;
         }
 
         return super.onKeyDown(keyCode, event);
-    }*/
+    }
 }
