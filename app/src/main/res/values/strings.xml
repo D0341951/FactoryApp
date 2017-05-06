@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FactoryApp</string>
+    <string name="btn_introd">公司簡介</string>
+    <string name="btn_catalog">目錄</string>
+    <string name="btn_audio">影片</string>
+    <string name="btn_agent">代理商</string>
+    <string name="btn_query">零件查詢</string>
+    <string name="btn_feed">回饋</string>
+    <string name="btn_back">返回</string>
+
+</resources>
