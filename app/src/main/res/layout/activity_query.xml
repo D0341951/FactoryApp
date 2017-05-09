@@ -7,10 +7,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.factoryapp.query">
 
-    <Button
-        android:id="@+id/back5"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="返回" />
+        android:ems="10"
+        android:inputType="textLongMessage"
+        android:hint="查詢項目"
+        android:text="" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="查詢" />
 </LinearLayout>

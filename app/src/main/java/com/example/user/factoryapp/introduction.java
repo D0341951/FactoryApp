@@ -1,6 +1,7 @@
 package com.example.user.factoryapp;
 
 import android.graphics.Bitmap;
+import android.view.WindowManager;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.URLUtil;
@@ -30,6 +31,9 @@ public class introduction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //requestWindowFeature(Window.FEATURE_NO_TITLE );
+        //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_introduction);
         webView = (WebView)findViewById(R.id.webView);
         webView.setWebViewClient(mWebViewClient);
