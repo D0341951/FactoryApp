@@ -10,6 +10,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.NetworkInfo;
 import android.view.KeyEvent;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.*;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,9 +22,11 @@ public class catalog extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalog);
 
-        back = (Button)findViewById(R.id.back2);
+        //requestWindowFeature(Window.FEATURE_NO_TITLE );
+        //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
+        setContentView(R.layout.activity_catalog);
+        /*back = (Button)findViewById(R.id.back2);
         back.setOnClickListener(new Button.OnClickListener() {
 
             public void onClick(View v) {
@@ -31,17 +35,19 @@ public class catalog extends AppCompatActivity {
                 intent.setClass(catalog.this, MainActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 
-     /*public boolean onKeyDowm(int keyCode, KeyEvent event) {
+     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if(keyCode==KeyEvent.KEYCODE_BACK) {
-
+            Intent intent = new Intent(catalog.this, MainActivity.class);
+            startActivity(intent);
+            this.finish();
             return true;
         }
 
         return super.onKeyDown(keyCode, event);
-    }*/
+    }
 }

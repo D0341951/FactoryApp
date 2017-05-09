@@ -3,6 +3,7 @@
     package="com.example.user.factoryapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,28 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver android:name=".BR_receiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".introduction">
-        </activity>
-        <activity
-            android:name=".catalog" >
-        </activity>
-        <activity
-            android:name=".audio" >
-        </activity>
-        <activity
-            android:name=".query" >
-    </activity>
-        <activity android:name=".feedback">
-
-        </activity>
+        <activity android:name=".introduction"></activity>
+        <activity android:name=".catalog"></activity>
+        <activity android:name=".audio"></activity>
+        <activity android:name=".query"></activity>
+        <activity android:name=".feedback"></activity>
     </application>
 
 </manifest>
