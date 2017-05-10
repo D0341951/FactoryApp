@@ -28,11 +28,10 @@ public class query extends AppCompatActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE );
         //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_query);
-        search = (Button)findViewById(R.id.search);
-        searchitem = (EditText)findViewById(R.id.searchitem);
+        search = (Button) findViewById(R.id.search);
+        searchitem = (EditText) findViewById(R.id.searchitem);
         search.setOnClickListener(googlesearch);
     }
-
     private OnClickListener googlesearch = new OnClickListener() {
 
         @Override
