@@ -1,39 +1,27 @@
 package com.example.user.factoryapp;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.AlertDialog;
 import android.view.WindowManager;
-import android.view.Window;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.NetworkInfo;
 import android.view.KeyEvent;
 import android.widget.*;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
     final int PageMain = 0;
-    final int PageIntrod = 1;
-    final int PageCatalog = 2;
-    final int PageAudio = 3;
-    final int PageAgent = 4;
-    final int PageQuery = 5;
-    final int PageFeed = 6;
     int currentPage;
     public static final String BROADCAST_ACTION = "android.intent.action.MAIN";
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //getSupportActionBar().hide();
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         pagemain();
     }
@@ -76,6 +64,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent aud = new Intent();
                 aud.setClass(MainActivity.this, audio.class);
                 startActivity(aud);
+                finish();
+            }
+        });
+        Button agent = (Button)findViewById(R.id.agent);
+        agent.setOnClickListener(new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent agt = new Intent();
+                agt.setClass(MainActivity.this, com.example.user.factoryapp.agent2.class);
+                startActivity(agt);
                 finish();
             }
         });
