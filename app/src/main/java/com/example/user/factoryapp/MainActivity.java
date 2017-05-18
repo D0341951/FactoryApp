@@ -20,20 +20,15 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     final int PageMain = 0;
-    final int PageIntrod = 1;
-    final int PageCatalog = 2;
-    final int PageAudio = 3;
-    final int PageAgent = 4;
-    final int PageQuery = 5;
-    final int PageFeed = 6;
     int currentPage;
     public static final String BROADCAST_ACTION = "android.intent.action.MAIN";
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //getSupportActionBar().hide();
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         pagemain();
     }

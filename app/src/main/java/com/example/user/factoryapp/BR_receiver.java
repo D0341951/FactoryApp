@@ -22,7 +22,7 @@ public class BR_receiver extends BroadcastReceiver {
         if(info!=null && info.isConnected()) {
 
             String message = info.getTypeName();
-            Toast.makeText(context, message+"已連線至網路", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, message+"已連線", Toast.LENGTH_SHORT).show();
         }
         else if(info==null) {
 
