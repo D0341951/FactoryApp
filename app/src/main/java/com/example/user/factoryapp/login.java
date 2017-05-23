@@ -77,8 +77,8 @@ public class login extends AppCompatActivity {
         });
     }
 
-    private void register(final String email, final String password) {new AlertDialog.Builder(login.this).setTitle("登入問題").setMessage("無此帳號，是否要以此帳號與密碼註冊?")
-            .setPositiveButton("註冊", new DialogInterface.OnClickListener() {
+    private void register(final String email, final String password) {new AlertDialog.Builder(login.this).setTitle("登入問題")
+            .setMessage("無此帳號，是否要以此帳號與密碼註冊?").setPositiveButton("註冊", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     createUser(email, password);}
@@ -87,12 +87,12 @@ public class login extends AppCompatActivity {
 
     private void createUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                String message = task.isComplete() ? "註冊成功" : "註冊失敗";
-                new AlertDialog.Builder(login.this).setMessage(message).setPositiveButton("OK", null).show();
-            }
-        });
+        @Override
+        public void onComplete(@NonNull Task<AuthResult> task) {
+            String message = task.isSuccessful() ? "註冊成功" : "註冊失敗";
+            new AlertDialog.Builder(login.this).setMessage(message).setPositiveButton("OK", null).show();
+        }
+    });
     }
 
     /*private void addContact(){
