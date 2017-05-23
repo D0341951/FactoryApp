@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent agt = new Intent();
-                agt.setClass(MainActivity.this, com.example.user.factoryapp.agent2.class);
+                agt.setClass(MainActivity.this, com.example.user.factoryapp.login.class);
                 startActivity(agt);
                 finish();
             }

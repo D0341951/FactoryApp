@@ -19,10 +19,10 @@ public class BR_receiver extends BroadcastReceiver {
         ConnectivityManager myConnectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = myConnectivityManager.getActiveNetworkInfo();
 
-        if(info!=null && info.isConnected() && con == 1) {
+        if(info!=null && info.isConnected()) {
 
             String message = info.getTypeName();
-            Toast.makeText(context, message+"已連線", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, message + "已連線", Toast.LENGTH_SHORT).show();
         }
         else if(info==null) {
 

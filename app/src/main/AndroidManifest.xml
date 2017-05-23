@@ -39,9 +39,7 @@
         <activity android:name=".audio" />
         <activity android:name=".query" />
         <activity android:name=".feedback" />
-        <activity android:name=".agent" />
-        <activity android:name=".updownload" />
-        <activity android:name=".agent2"></activity>
+        <activity android:name=".login" />
     </application>
 
 </manifest>
