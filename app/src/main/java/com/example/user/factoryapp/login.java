@@ -1,11 +1,13 @@
 package com.example.user.factoryapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 
@@ -77,8 +79,8 @@ public class login extends AppCompatActivity {
         });
     }
 
-    private void register(final String email, final String password) {new AlertDialog.Builder(login.this).setTitle("登入問題").setMessage("無此帳號，是否要以此帳號與密碼註冊?")
-            .setPositiveButton("註冊", new DialogInterface.OnClickListener() {
+    private void register(final String email, final String password) {new AlertDialog.Builder(login.this).setTitle("登入問題")
+            .setMessage("無此帳號，是否要以此帳號與密碼註冊?").setPositiveButton("註冊", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     createUser(email, password);}
@@ -89,12 +91,23 @@ public class login extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                String message = task.isComplete() ? "註冊成功" : "註冊失敗";
+                String message = task.isSuccessful() ? "註冊成功" : "註冊失敗";
                 new AlertDialog.Builder(login.this).setMessage(message).setPositiveButton("OK", null).show();
             }
         });
     }
 
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if(keyCode==KeyEvent.KEYCODE_BACK) {
+
+            Intent intent = new Intent(login.this, MainActivity.class);
+            startActivity(intent);
+            this.finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
     /*private void addContact(){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = db.getReference("users");

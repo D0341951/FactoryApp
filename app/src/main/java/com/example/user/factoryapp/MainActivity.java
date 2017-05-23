@@ -23,13 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //getSupportActionBar().hide();
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Intent intent = new Intent(BROADCAST_ACTION);
+        sendBroadcast(intent);
         pagemain();
     }
 
     private void pagemain() {
-
-        Intent intent = new Intent(BROADCAST_ACTION);
-        sendBroadcast(intent);
 
         currentPage = PageMain;
         setContentView(R.layout.activity_main);
@@ -90,14 +89,14 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Button feedback = (Button)findViewById(R.id.feed);
-        feedback.setOnClickListener(new Button.OnClickListener() {
+        Button sup = (Button)findViewById(R.id.sup);
+            sup.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent fb = new Intent();
-                fb.setClass(MainActivity.this, feedback.class);
-                startActivity(fb);
+                Intent tsup = new Intent();
+                tsup.setClass(MainActivity.this, techsup.class);
+                startActivity(tsup);
                 finish();
             }
         });

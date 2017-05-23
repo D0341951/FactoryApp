@@ -1,14 +1,19 @@
 <resources>
     <string name="app_name">FactoryApp</string>
     <string name="btn_introd">公司簡介</string>
-    <string name="btn_catalog">目錄</string>
+    <string name="btn_catalog">電子目錄</string>
     <string name="btn_audio">影片</string>
     <string name="btn_agent">代理商</string>
     <string name="btn_query">零件查詢</string>
-    <string name="btn_feed">回饋</string>
+    <string name="btn_sup">技術支援</string>
     <string name="btn_back">返回</string>
     <string name="btn_search">查詢</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="btn_pdf1">鳳凰機系列</string>
+    <string name="btn_pdf2">L 機 雙軸延伸拉吹機系列</string>
+    <string name="btn_pdf3">廣口機系列</string>
+    <string name="btn_pdf4">L機 雙軸延伸拉吹機系列 大容量瓶型</string>
+    <string name="btn_pdf5">一段式系列</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

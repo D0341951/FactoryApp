@@ -8,11 +8,6 @@
     <user-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <user-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -38,7 +33,7 @@
         <activity android:name=".catalog" />
         <activity android:name=".audio" />
         <activity android:name=".query" />
-        <activity android:name=".feedback" />
+        <activity android:name=".techsup" />
         <activity android:name=".login" />
     </application>
 

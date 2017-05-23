@@ -46,10 +46,10 @@
                 android:text="@string/btn_query" />
 
             <Button
-                android:id="@+id/feed"
+                android:id="@+id/sup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_feed" />
+                android:text="@string/btn_sup" />
         </TableRow>
 
     <ImageView
