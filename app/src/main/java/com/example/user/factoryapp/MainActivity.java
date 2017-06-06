@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Button agent = (Button)findViewById(R.id.agent);
+        /*Button agent = (Button)findViewById(R.id.agent);
         agent.setOnClickListener(new Button.OnClickListener() {
 
             @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(agt);
                 finish();
             }
-        });
+        });*/
         Button query = (Button)findViewById(R.id.query);
         query.setOnClickListener(new Button.OnClickListener() {
             @Override

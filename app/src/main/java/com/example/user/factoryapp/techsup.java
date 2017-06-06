@@ -8,21 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
 public class techsup extends AppCompatActivity {
-
-    final String msgOK = "下載完成";
-    final String msgNOK = "下載失敗";
-    final String fireurl = "http://pet.chumpower.com/downfile.php?id=D2016091300002_57d90f936a422_tw.pdf&type=down";
-    final String Ldoubleurl = "http://pet.chumpower.com/downfile.php?id=D2016091299991_57daa60c883eb_tw.pdf&type=down";
-    final String wideurl = "http://pet.chumpower.com/downfile.php?id=D2016091300003_57d90f9f15303_tw.pdf&type=down";
-    final String Ldoublelargeurl = "http://pet.chumpower.com/downfile.php?id=D2016091299994_57daa64b00134_tw.pdf&type=down";
-    final String oneurl = "http://pet.chumpower.com/downfile.php?id=D2016091300015_57d90fc3a237f_tw.pdf&type=down";
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,63 +31,43 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            download(fireurl, "鳳凰機.pdf");
+            phoenixPDF thread1 = new phoenixPDF(techsup.this);
+            thread1.start();
         }
     };
     View.OnClickListener pdf2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            download(Ldoubleurl, "L雙軸延伸拉吹機.pdf");
+            LdoublePDF thread2 = new LdoublePDF(techsup.this);
+            thread2.start();
         }
     };
     View.OnClickListener pdf3 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            download(wideurl, "廣口機.pdf");
+            widePDF thread3 = new widePDF(techsup.this);
+            thread3.start();
         }
     };
     View.OnClickListener pdf4 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            download(Ldoublelargeurl, "L雙軸延伸拉吹機大容量瓶.pdf");
+            LdoubleLargePDF thread4 = new LdoubleLargePDF(techsup.this);
+            thread4.start();
         }
     };
     View.OnClickListener pdf5 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            download(oneurl, "一段式.pdf");
+            onePDF thread5 = new onePDF(techsup.this);
+            thread5.start();
         }
     };
 
-    public void download(String url, String filename) {
-
-        try {
-
-            File pdf = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath(), filename);
-            FileOutputStream fos = new FileOutputStream(pdf);
-            URL Url = new URL(url);
-            URLConnection conn = Url.openConnection();
-            conn.connect();
-            InputStream is = conn.getInputStream();
-
-            byte[] buffer = new byte[1024];
-            int len;
-            while ((len = is.read(buffer)) > 0) {
-                fos.write(buffer, 0, len);
-            }
-            is.close();
-            fos.close();
-            Toast.makeText(techsup.this, msgOK, Toast.LENGTH_SHORT).show();
-        }
-        catch (Exception e) {
-
-            Toast.makeText(techsup.this, msgNOK, Toast.LENGTH_SHORT).show();
-        }
-    }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
