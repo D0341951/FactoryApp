@@ -26,16 +26,8 @@ public class audio extends AppCompatActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE );
         //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_audio);
-        /*back = (Button)findViewById(R.id.back3);
-        back.setOnClickListener(new Button.OnClickListener() {
-
-            public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setClass(audio.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });*/
+        /*
+        */
     }
 
    public boolean onKeyDown(int keyCode, KeyEvent event) {

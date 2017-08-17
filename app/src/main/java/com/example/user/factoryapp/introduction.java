@@ -9,7 +9,6 @@ import android.webkit.WebViewClient;
 
 public class introduction extends AppCompatActivity {
 
-    //Button back;
     private WebView webView=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

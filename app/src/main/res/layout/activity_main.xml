@@ -31,10 +31,10 @@
                 android:text="@string/btn_audio" />
 
             <Button
-                android:id="@+id/agent"
+                android:id="@+id/scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_agent" />
+                android:text="@string/btn_scan" />
         </TableRow>
 
         <TableRow>
@@ -53,8 +53,8 @@
         </TableRow>
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/logo"/>
 
 </TableLayout>

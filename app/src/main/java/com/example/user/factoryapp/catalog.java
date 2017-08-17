@@ -26,16 +26,6 @@ public class catalog extends AppCompatActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE );
         //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_catalog);
-        /*back = (Button)findViewById(R.id.back2);
-        back.setOnClickListener(new Button.OnClickListener() {
-
-            public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setClass(catalog.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
 

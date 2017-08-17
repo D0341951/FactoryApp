@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //getSupportActionBar().hide();
-        getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Intent intent = new Intent(BROADCAST_ACTION);
         sendBroadcast(intent);
         pagemain();
@@ -66,25 +66,25 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        /*Button agent = (Button)findViewById(R.id.agent);
-        agent.setOnClickListener(new Button.OnClickListener() {
+        Button QRscan = (Button)findViewById(R.id.scan);
+        QRscan.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                Intent agt = new Intent();
-                agt.setClass(MainActivity.this, com.example.user.factoryapp.login.class);
-                startActivity(agt);
+                Intent QR = new Intent();
+                QR.setClass(MainActivity.this, scan.class);
+                startActivity(QR);
                 finish();
             }
-        });*/
+        });
         Button query = (Button)findViewById(R.id.query);
         query.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent que = new Intent();
-                que.setClass(MainActivity.this, query.class);
+                que.setClass(MainActivity.this, gridMain.class);
                 startActivity(que);
                 finish();
             }
@@ -118,25 +118,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void ConfirmExit(){
 
-        AlertDialog.Builder ad=new AlertDialog.Builder(MainActivity.this).setCancelable(false); //創建訊息方塊
+        AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this).setCancelable(false); //創建訊息方塊
 
         ad.setTitle("離開");
 
         ad.setMessage("確定要離開?");
+
+        ad.setNegativeButton("否",new DialogInterface.OnClickListener() { //按"否",則不執行任何操作
+
+            public void onClick(DialogInterface dialog, int i) {
+
+            }
+
+        });
 
         ad.setPositiveButton("是", new DialogInterface.OnClickListener() { //按"是",則退出應用程式
 
             public void onClick(DialogInterface dialog, int i) {
 
                 MainActivity.this.finish();//關閉activity
-
-            }
-
-        });
-
-        ad.setNegativeButton("否",new DialogInterface.OnClickListener() { //按"否",則不執行任何操作
-
-            public void onClick(DialogInterface dialog, int i) {
 
             }
 

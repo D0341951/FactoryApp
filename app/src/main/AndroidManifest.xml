@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -34,7 +33,20 @@
         <activity android:name=".audio" />
         <activity android:name=".query" />
         <activity android:name=".techsup" />
-        <activity android:name=".login" />
+        <activity android:name=".scan" />
+        <activity android:name=".activity_login" />
+        <activity android:name=".choose_drill" />
+        <activity android:name=".choose_expower" />
+        <activity android:name=".choose_tap" />
+        <activity android:name=".choose_spindle" />
+        <activity android:name=".choose_toolmain" />
+        <activity android:name=".choose_toolconponent" />
+        <activity android:name=".choose_vises" />
+        <activity android:name=".choose_anglehead" />
+        <activity android:name=".choose_efmill" />
+        <activity android:name=".choose_techdata" />
+        <activity android:name=".gridMain"/>
+
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.example.user.factoryapp;
 
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -31,7 +30,7 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            phoenixPDF thread1 = new phoenixPDF(techsup.this);
+            DrillPDF thread1 = new DrillPDF(techsup.this);
             thread1.start();
         }
     };
@@ -39,7 +38,7 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            LdoublePDF thread2 = new LdoublePDF(techsup.this);
+            EXpowerPDF thread2 = new EXpowerPDF(techsup.this);
             thread2.start();
         }
     };
@@ -47,7 +46,7 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            widePDF thread3 = new widePDF(techsup.this);
+            TapPDF thread3 = new TapPDF(techsup.this);
             thread3.start();
         }
     };
@@ -55,7 +54,7 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            LdoubleLargePDF thread4 = new LdoubleLargePDF(techsup.this);
+            SpindlePDF thread4 = new SpindlePDF(techsup.this);
             thread4.start();
         }
     };
@@ -63,7 +62,7 @@ public class techsup extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            onePDF thread5 = new onePDF(techsup.this);
+            ToolingPDF thread5 = new ToolingPDF(techsup.this);
             thread5.start();
         }
     };
